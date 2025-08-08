@@ -1,36 +1,45 @@
-function handleMobileNav() {
- 
-  if (window.innerWidth <= 700) {
-    const links = document.querySelectorAll('.nav-link');
-    const toggle = document.querySelectorAll('.nav-toggle');
+//Toggle menu configuration
+function setupMobileNav() {
+  const menu = document.getElementById("menu");
+  const togglesOpen = document.querySelectorAll('.nav-toggle-open');
+  const togglesClose = document.querySelectorAll('.nav-toggle-close');
+  const links = document.querySelectorAll('.nav-link');
 
-    links.forEach(link => {
-      link.addEventListener('click', function () {
-        let menu = document.getElementById("menu");
-        menu.style.marginTop = "-100vh";
-      });
-    });
 
-    toggle.forEach(t => {
-      t.addEventListener('click', function () {
-        let menu = document.getElementById("menu");
-        menu.style.marginTop = "0vh";
-      });
+  togglesClose.forEach(togClose => togClose.style.display = 'none');
+  menu.style.marginTop = "-100vh"; 
+ach(togOpen => {
+    togOpen.addEventListener('click', () => {
+      menu.style.marginTop = "0";
+      togglesOpen.forEach(t => t.style.display = 'none');
+      togglesClose.forEach(t => t.style.display = 'block');
     });
-  }
+  });
+
+
+  togglesClose.forEach(togClose => {
+    togClose.addEventListener('click', () => {
+      menu.style.marginTop = "-100vh";
+      togglesOpen.forEach(t => t.style.display = 'block');
+      togglesClose.forEach(t => t.style.display = 'none');
+    });
+  });
+
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.style.marginTop = "-100vh";
+      togglesOpen.forEach(t => t.style.display = 'block');
+      togglesClose.forEach(t => t.style.display = 'none');
+    });
+  });
 }
 
 
-handleMobileNav();
+setupMobileNav();
 
+//homw section text animation
 
-window.addEventListener('resize', () => {
-
-  handleMobileNav();
-});
-
-
-// Welcome text typing
 const welcomeText = "Welcome To My Protfolio";
 const welcomeElement = document.getElementById("welcome-text");
 
@@ -45,7 +54,7 @@ function typeWelcome() {
   }
 }
 
-// Profession text typing (loop)
+
 const professions = ["Front-End Developer", "Web Designer", "UI/UX Enthusiast"];
 const professionElement = document.getElementById("profession-text");
 let professionIndex = 0;
