@@ -1,21 +1,19 @@
-//Toggle menu configuration
 function setupMobileNav() {
   const menu = document.getElementById("menu");
   const togglesOpen = document.querySelectorAll('.nav-toggle-open');
   const togglesClose = document.querySelectorAll('.nav-toggle-close');
   const links = document.querySelectorAll('.nav-link');
 
-
   togglesClose.forEach(togClose => togClose.style.display = 'none');
-  menu.style.marginTop = "-100vh"; 
-ach(togOpen => {
+  menu.style.marginTop = "-100vh";
+
+  togglesOpen.forEach(togOpen => {
     togOpen.addEventListener('click', () => {
       menu.style.marginTop = "0";
       togglesOpen.forEach(t => t.style.display = 'none');
       togglesClose.forEach(t => t.style.display = 'block');
     });
   });
-
 
   togglesClose.forEach(togClose => {
     togClose.addEventListener('click', () => {
@@ -24,7 +22,6 @@ ach(togOpen => {
       togglesClose.forEach(t => t.style.display = 'none');
     });
   });
-
 
   links.forEach(link => {
     link.addEventListener('click', () => {
@@ -35,11 +32,11 @@ ach(togOpen => {
   });
 }
 
-
 setupMobileNav();
 
-//homw section text animation
 
+
+// Welcome text typing
 const welcomeText = "Welcome To My Protfolio";
 const welcomeElement = document.getElementById("welcome-text");
 
@@ -54,7 +51,7 @@ function typeWelcome() {
   }
 }
 
-
+// Profession text typing (loop)
 const professions = ["Front-End Developer", "Web Designer", "UI/UX Enthusiast"];
 const professionElement = document.getElementById("profession-text");
 let professionIndex = 0;
