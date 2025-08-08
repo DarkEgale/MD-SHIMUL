@@ -9,7 +9,6 @@ body{
   box-sizing: border-box;
 }
 nav{
-  border-bottom: 1px solid white;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -17,6 +16,8 @@ nav{
   position: fixed;
   z-index: 9999999;
   margin-top: -60px;
+  background: rgba(0, 0, 0, 0.904);
+  box-shadow: 0px 0px 15px blue;
 }
 nav ul{
   display: flex;
@@ -24,6 +25,8 @@ nav ul{
 nav ul li{
   list-style: none;
   display: inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 nav ul li a{
   color: white !important;
@@ -35,8 +38,7 @@ nav label{
   margin-right: auto;
   cursor: pointer;
   margin-top: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
+
   display: none;
 }
 #check{
@@ -54,7 +56,7 @@ nav label{
     margin-top: -100vh;
     padding: 10px;
     background: green;
-    transition: 0.3s all;
+    transition: 0.3s ease-in-out;
   }
   nav ul li{
     list-style: none;
@@ -68,8 +70,150 @@ nav label{
     margin-top: 60px;
   }
 }
+
+/*Home section*/
+#home{
+  width: 100;
+  height: 100%;
+  height: fit-content;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero-background {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hero-background::before {
+    content: "";
+  position: absolute;
+  background: radial-gradient(circle, rgb(65, 83, 248),transparent);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 40%;
+}
+.hero-text {
+padding-left: 100px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  color: #00aaff;
+}
+
+.hero-text h2 {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.hero-text h2 span {
+  color: #00ffcc;
+}
+
+.hero-text p {
+  margin-top: 50px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #cccccc;
+  font-weight: bold;
+}
+.hero-background img{
+  height: auto;
+}
+/*home resdponsive*/
+
+@media(max-width:700px){
+  #home{
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-background{
+    width: 100%;
+    height: fit-content;
+  }
+  .hero-background img{
+    width: 100%;
+    height: auto;
+  }
+  .hero-text{
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+
+/*Project section */
+
+#project{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  flex-direction: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.image-cards{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px blue;
+  padding: 10px;
+  border: 10px;
+}
+.image-cards img{
+  border-radius: 10px;
+}
+
+.image-cards:hover .overlay{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(83, 82, 82, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center; 
+  align-items: center;     
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: 3.0;
+  border-radius: 10px;
+}
+
+.overlay button {
+  padding: 10px 20px;
+  margin: auto;
+}
+.overlay button ::after{
+  transform: scale(1.1);
+}
+
+
 /*contact form*/
-#form-background{
+.background{
 
   height: 600px;
   width: 600px;
@@ -78,7 +222,7 @@ nav label{
   position: relative;
   padding: 100px;
 }
-#form-background::before{
+.background::before{
     content: "";
   position: absolute;
   background: radial-gradient(circle, blue,transparent);
@@ -98,6 +242,7 @@ form{
   border: 1px solid white;
   padding: 20px;
   border-radius: 10px;
+  color: white !important;
 }
 /*responsive form*/
 @media(max-width:700px){
