@@ -1,3 +1,11 @@
+// set responsive nav
+function ResponsiveNav() {
+
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    setupMobileNav();
+  }
+}
+
 function setupMobileNav() {
   const menu = document.getElementById("menu");
   const togglesOpen = document.querySelectorAll('.nav-toggle-open');
@@ -32,11 +40,16 @@ function setupMobileNav() {
   });
 }
 
-setupMobileNav();
+
+ResponsiveNav();
+
+
+window.addEventListener("resize", ResponsiveNav);
 
 
 
-// Welcome text typing
+
+
 const welcomeText = "Welcome To My Protfolio";
 const welcomeElement = document.getElementById("welcome-text");
 

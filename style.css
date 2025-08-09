@@ -124,12 +124,11 @@ nav label {
 
 /* Hero background */
 .hero-background {
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
   position: relative;
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .hero-background::before {
@@ -184,7 +183,59 @@ nav label {
   color: #cccccc;
   font-weight: bold;
 }
+/*about section*/
+#about{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.about-img{
+height: fit-content;
+width: fit-content;
+border-radius: 10px;
 
+display:flex;
+justify-content: center;
+padding: 20px;
+}
+.about-img img{
+  width: 250px;
+  height: 370px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px gray;
+  filter: brightness(90%) contrast(120%);
+}
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.about-text h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
 /* Home responsive */
 @media (max-width: 700px) {
   #home {
@@ -215,6 +266,61 @@ nav label {
   .hero-text p {
     margin-top: 20px;
     font-size: 16px;
+  }
+}
+#about{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+.about-text {
+  max-width: 600px;
+  padding: 20px; 
+  color: white; 
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #00aaff; 
+}
+
+.about-text h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #00ffcc; 
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #cccccc; 
+}
+
+.about-text ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #e0e0e0; 
+}
+.about-btn{
+  padding: 5px;
+  margin-left: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+  background: linear-gradient(90deg,orange,green);
+  box-shadow: 0px 0px 10px blue;
+}
+
+
+@media (max-width: 700px) {
+  #about {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text {
+    text-align: center;
+    padding: 15px;
   }
 }
 
