@@ -313,20 +313,43 @@ margin-right: 50px;
 #service{
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 30px;
 }
-#service .image-cards img{
-  width: 400px;
-  height: 300px !important;
-  border-bottom: 1px solid white;
-  border-radius: 0px !important;
+.service-part{
+  margin: 50px;
+  padding: 50px;
+  border: 1px dashed white;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: white;
+  align-items: center;
+  flex-direction: row;
 }
-
-
-
+.service-part img{
+  object-fit: cover;
+  height: 250px;
+  width: 300px;
+  box-sizing: border-box;
+}
+.service-text{
+  margin-left: 100px;
+}
+/* Service responsive*/
   
+@media (max-width:700px) {
+  .service-part{
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+  }.service-text{
+   margin: 10px;
+   text-align: center;
+  }
+}
 
 /* Project Section */
 #project {
@@ -466,13 +489,8 @@ form {
   display: flex;
   flex-direction: row;       
   justify-content: center; 
+  align-items: center;
   gap: 15px;
-  display:flex;   
-  align-items: center;     
-  position: relative;   
-  margin-top: 300px; 
-  margin-left: auto;
-  margin-right: auto; 
 }
 .social-icon{
   width: 50px;
@@ -483,6 +501,27 @@ form {
   align-items: center;
   font-size: 20px;
 
+}
+.quick-links{
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center ;
+}
+.quick-links ul{
+  display: inline-block;
+}
+.quick-links ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 50px;
+}
+.quick-links ul li a{
+  text-decoration: none;
+  color: whitesmoke;
 }
 /* Responsive form */
 @media (max-width: 700px) {
@@ -502,5 +541,15 @@ form {
     margin: 10px;  
     padding: 10px;
     margin-bottom: 50px;   
+  }
+  .social-btn{
+    width: 100%;
+  }
+  .quick-links{
+    margin-top: 200px;
+    width: 100%;
+  }
+  .quick-links ul li{
+    margin: 5px;
   }
 }
