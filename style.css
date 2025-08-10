@@ -6,6 +6,8 @@
 body {
   padding-top: 60px;
   background: #000000 !important;
+  scroll-behavior: smooth;
+  transition: 0.1;
 }
 
 /* Navigation */

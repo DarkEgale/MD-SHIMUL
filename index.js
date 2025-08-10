@@ -48,7 +48,7 @@ window.addEventListener("resize", ResponsiveNav);
 
 
 
-
+//Typing text effect
 
 const welcomeText = "Welcome To My Protfolio";
 const welcomeElement = document.getElementById("welcome-text");
@@ -101,3 +101,27 @@ function startProfessionTyping() {
 }
 
 typeWelcome();
+
+
+//Scroll Effect
+
+
+const navlink=document.querySelectorAll('nav ul li a');
+window.addEventListener('scroll',()=>{
+  let scrollPos=window.scrollY || window.pageYOffset
+  navlink.forEach(link=>{
+    const sectionId=link.getAttribute('href').substring(1);
+    const section=document.getElementById(sectionId)
+    if(!section){
+      return;
+    }
+    const top=section.offsetTop-60;
+    const bottom=top+section.offsetHeight;
+    if(scrollPos>top && scrollPos<bottom){
+      navlink.forEach(l=>{
+        l.classList.remove('active')
+      })
+      link.classList.add('active')
+    }
+  })
+})
