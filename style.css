@@ -460,6 +460,8 @@ margin-right: 50px;
   height: 100%;
   border-radius: 50%;
   filter: blur(50px);
+  --webkit--filter:blur(50px);
+  -moz-filter:blur(50px);
   pointer-events: none;
   opacity: 0.4;
   z-index: 0;
