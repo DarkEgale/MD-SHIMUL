@@ -557,3 +557,15 @@ form {
     margin: 5px;
   }
 }
+
+/*effect*/
+#motion {
+  position: absolute;
+  pointer-events: none; 
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, blue, transparent);
+  border-radius: 50%;
+  filter: blur(40px);
+  transition: 0.1s ease-in-out;
+}

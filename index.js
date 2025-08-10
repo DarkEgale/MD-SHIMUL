@@ -125,3 +125,12 @@ window.addEventListener('scroll',()=>{
     }
   })
 })
+
+//mouse folow interection
+    document.addEventListener('mousemove', function(event) {
+      const motion = document.getElementById("motion");
+      const offsetX = motion.offsetWidth / 2;
+      const offsetY = motion.offsetHeight / 2;
+      motion.style.left = (event.pageX - offsetX) + "px";
+      motion.style.top = (event.pageY - offsetY) + "px";
+    });
