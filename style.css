@@ -148,13 +148,15 @@ nav label {
   z-index: 0;
 }
 
-.hero-background img {
+.hero-image{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .hero-text {
@@ -236,6 +238,8 @@ display:flex;
 justify-content: center;
 padding: 20px;
 margin-right: 50px;
+opacity: 0;
+transform: translateY(100px);
 }
 .about-img img{
   width: 250px;
@@ -247,6 +251,8 @@ margin-right: 50px;
 }
 .about-text {
   max-width: 600px;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .about-text h2 {
@@ -330,6 +336,8 @@ margin-right: 50px;
   color: white;
   align-items: center;
   flex-direction: row;
+  opacity: 0;
+  transform: translateY(100px);
 }
 .service-part img{
   object-fit: cover;
@@ -373,12 +381,17 @@ margin-right: 50px;
   overflow: hidden;
   cursor: pointer;
   background: #111;
-  transition: transform 0.3s ease;
   height: fit-content;
   color: white;
   padding: 10px;
   margin-top: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(5px);
+  transition:0;
+  margin-bottom: 20px;
 }
+
 
 .image-cards:hover {
   transform: scale(1.05);
@@ -568,4 +581,10 @@ form {
   border-radius: 50%;
   filter: blur(40px);
   transition: 0.1s ease-in-out;
+}
+.active-motion{
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1.2s;
+  filter: blur(0px) !important;
 }

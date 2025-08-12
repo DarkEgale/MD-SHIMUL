@@ -134,3 +134,20 @@ window.addEventListener('scroll',()=>{
       motion.style.left = (event.pageX - offsetX) + "px";
       motion.style.top = (event.pageY - offsetY) + "px";
     });
+
+
+//Loding effect motion
+
+const boxes = document.querySelectorAll('.image-cards,.hero-background img,.about-img,.about-text,.service-part');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active-motion');
+    }
+  });
+}, { threshold: 0.1 });
+
+boxes.forEach(box => {
+  observer.observe(box);
+});
