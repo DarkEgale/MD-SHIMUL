@@ -230,22 +230,54 @@ nav label {
   display: flex;
   justify-content: center;
 }
-.about-img{
-height: fit-content;
-width: fit-content;
-border-radius: 10px;
-display:flex;
-justify-content: center;
-padding: 20px;
-margin-right: 50px;
-opacity: 0;
-transform: translateY(100px);
+.about-img {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 50px;
+  opacity: 0;
+  transform: translateY(100px);
+  position: relative;
 }
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.about-img::after ,.about-img::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 10px;
+  height: 100%;
+  width:100%;
+  background: conic-gradient(from var(--angle), red,blue,green);
+  z-index: -1;
+  animation: spin 1s linear infinite;
+}
+.about-img::before{
+  content: '';
+  position: absolute;
+  filter: blur(1.5rem);
+}
+@keyframes spin{
+  0%{
+    --angle:0deg;
+  }
+  100%{
+    --angle:360deg;
+  }
+}
+
 .about-img img{
   width: 250px;
   height: 370px;
   border-radius: 10px;
-  box-shadow: 0px 0px 50px blue;
   filter: brightness(100%) contrast(110%);
 
 }
@@ -288,12 +320,25 @@ transform: translateY(100px);
   border: none;
   margin: 20px;
   background: linear-gradient(90deg,rgb(117, 207, 117),green);
-  box-shadow: 0px 0px 20px green;
   transition: 0.1s;
+  width: 200px;
+  position: relative;
 }
-.about-btn:hover{
-  transform: scale(1.05);
+.about-btn::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from var(--angle),transparent 70%,blue,red );
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  z-index: -1;
+  padding: 10px;
+   animation: spin 4s linear infinite;
+   border-radius: 8px;
 }
+
 
 /*Responsive about section*/
 
@@ -307,7 +352,7 @@ transform: translateY(100px);
     padding: 15px;
   }
   .about-img{
-    width: 100%;
+    width: 260px;
     display: flex;
     justify-content: center;
     margin: 0px;
